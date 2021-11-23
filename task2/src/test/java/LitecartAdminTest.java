@@ -15,7 +15,7 @@ public class LitecartAdminTest {
     }
 
     @Test
-    public void loginAndPasswordFieldsMustBeFilledWhenLoginFormOpens() {
+    public void loginAndPasswordFieldsFilledAndPressLoginButtonWhenLoginFormOpens() {
         driver.get("http://localhost/litecart/admin");
 
         WebElement username = driver.findElement(new By.ByName("username"));
@@ -25,15 +25,11 @@ public class LitecartAdminTest {
         WebElement password = driver.findElement(new By.ByName("password"));
         password.click();
         password.sendKeys("admin");
-    }
 
-    @Test
-    public void clickButtonLogin() {
-        driver.get("http://localhost/litecart/admin");
         WebElement login = driver.findElement(new By.ByName("login"));
         login.click();
-
     }
+
     @After
     public void end() {
         driver.quit();
